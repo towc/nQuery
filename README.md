@@ -1,4 +1,4 @@
-# nQuery
+# xPressy
 jQuery-like express
 
 # how to use
