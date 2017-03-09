@@ -1,0 +1,26 @@
+{
+  "name": "nquery",
+  "version": "0.0.1",
+  "description": "jQuery-like express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/towc/nQuery.git"
+  },
+  "keywords": [
+    "jquery",
+    "express"
+  ],
+  "author": "towc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/towc/nQuery/issues"
+  },
+  "homepage": "https://github.com/towc/nQuery#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
