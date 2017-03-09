@@ -11,9 +11,13 @@ const $ = function( str ){
 $.url = function( str ){
   this.url = str;
 }
-$.url.prototype.get = function( callback ){
-  app.get( this.url, $.callback( this, callback ) );
-}
+
+$.methods = [ 'all', 'get', 'post' ];
+$.methods.map( function( method ){
+  $.url.prototype[ method ] = function( callback ){
+    app[ method ]( this.url, $.callback( this, callback ) );
+  }
+});
 $.callback = function( owner, fn ){
   return (function( req, res ){
     owner.req = req;
