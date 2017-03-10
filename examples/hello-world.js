@@ -4,6 +4,6 @@ $( '/home/:name' ).get(function(){
   this.res.send( 'Hello ' + this.req.params.name + '!' );
 });
 
-$.listen( 80, function( err ){
+$( 80 ).listen(function(){
   console.log( 'listening to 80! Try localhost/home/World' );
 } );

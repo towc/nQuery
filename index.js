@@ -1,10 +1,18 @@
 const express = require( 'express' )
     , app = express();
 
-const $ = function( str ){
+const $ = function( argument ){
   
-  if( str[ 0 ] === '/' ){
-    return new $.url( str );
+  if( argument.constructor === String ){
+    if( argument[ 0 ] === '/' ){
+      return new $.url( argument );
+    }
+  }
+
+  if( argument.constructor === Number ){
+    if( argument % 1 === 0 ){
+      return new $.integer( argument );
+    }
   }
 }
 
@@ -34,7 +42,10 @@ $.callback = function( owner, fn ){
     fn.bind( owner )();
   } ).bind( owner )
 }
-$.listen = function( port, callback ){
+$.integer = function( num ){
+  this.num = num;
+}
+$,integer.prototype.listen = function(  callback ){
   app.listen( port, callback );
 }
 

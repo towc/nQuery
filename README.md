@@ -15,14 +15,14 @@ Right now all you can do is the equivalent of `app.all`, `app.get`, `app.post` a
 
 # example
 
-```
+```js
 const $ = require( '../index.js' );
 
 $( '/home/:name' ).get(function(){
   this.res.send( 'Hello ' + this.req.params.name + '!' );
 });
 
-$.listen( 80, function(){
+$( 80 ).listen(function(){
   console.log( 'listening to 80! Try localhost/home/World' );
 } );
 ```
